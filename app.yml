@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1  
 kind: Application  
 metadata:  
-  name: javacicd 
-  namespace: argocd-image-updater-system  
+  name: javacicd2  
+  namespace: argocd 
   annotations:
     argocd-image-updater.argoproj.io/image-list: raja1801/javacicd
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/write-back-method: git 
 spec:  
   project: default  
   source:  
-    repoURL: https://github.com/Rajesh180118/Simple-Java-maven-CI-CD.git
-    path: spring-boot-app-manifests  
+    repoURL: git@github.com:Rajesh180118/Simple-Java-maven-CI-CD.git 
+    path: spring-boot-app-manifests
     targetRevision: HEAD  
   destination:  
     server: https://kubernetes.default.svc  
-    namespace: javacicd  
+    namespace: default  
   syncPolicy:  
     automated: {}  
