@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application  
 metadata:  
   name: javacicd 
-  namespace: argocd  
+  namespace: argocd-image-updater-system  
   annotations:
     argocd-image-updater.argoproj.io/image-list: raja1801/javacicd
     argocd-image-updater.argoproj.io/write-back-method: git
